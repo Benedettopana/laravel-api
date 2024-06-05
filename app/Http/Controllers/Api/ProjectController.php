@@ -17,7 +17,7 @@ class ProjectController extends Controller
 
     public function getProjectBySlug($slug){
 
-        $project = Project::where('slug', $slug)->with('type', 'technologies', 'user')->first();
+        $project = Project::where('slug', $slug)->with('type')->first();
         if($project){
             $success = true;
         }else{
